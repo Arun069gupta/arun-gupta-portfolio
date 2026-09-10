@@ -10,8 +10,8 @@ import * as THREE from 'three';
 
 
 function CustomRobot() {
-  // This will load 'robot.glb' from your public folder
-  const { scene } = useGLTF('/robot.glb');
+  // Dynamically resolve path — works with any base URL (custom domain or /My-Portfolio/)
+  const { scene } = useGLTF(`${import.meta.env.BASE_URL}robot.glb`);
   const robotRef = useRef<THREE.Group>(null);
   const modelScale = 6;
   const modelCenter = new THREE.Box3().setFromObject(scene).getCenter(new THREE.Vector3());
