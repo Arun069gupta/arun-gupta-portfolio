@@ -28,7 +28,7 @@ function CustomRobot() {
       <primitive
         object={scene}
         scale={modelScale}
-        position={[-modelCenter.x * modelScale, 0.1, -modelCenter.z * modelScale]}
+        position={[-modelCenter.x * modelScale, 0.2, -modelCenter.z * modelScale]}
       />
     </group>
   );

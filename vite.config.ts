@@ -4,8 +4,8 @@ import { fileURLToPath, URL } from 'node:url';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // Base path: '/' when using a custom domain, '/My-Portfolio/' without one
-  base: '/',
+  // Base path for GitHub Pages (must match repo name)
+  base: '/My-Portfolio/',
   plugins: [react()],
   resolve: {
     alias: {
