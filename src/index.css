@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #050608;
+  color: #e6e9ef;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050608;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0b91e8, #00355a);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #38aefc, #005a99);
+}
+
+::selection {
+  background: rgba(11, 145, 232, 0.3);
+  color: #eaf6ff;
+}
+
+@layer components {
+  .glass {
+    background: rgba(20, 24, 33, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .glass-strong {
+    background: rgba(14, 17, 23, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #eaf6ff 0%, #6fc6ff 50%, #0b91e8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .accent-line {
+    background: linear-gradient(90deg, transparent, #0b91e8, transparent);
+  }
+
+  .section-pad {
+    @apply px-6 md:px-12 lg:px-24 py-20 md:py-28;
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 40px -10px rgba(11, 145, 232, 0.5);
+  }
+
+  .glow-blue-hover {
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+  }
+
+  .glow-blue-hover:hover {
+    box-shadow: 0 0 50px -8px rgba(11, 145, 232, 0.45);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(11, 145, 232, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(11, 145, 232, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .bg-radial-fade {
+    background: radial-gradient(ellipse at center, rgba(11, 145, 232, 0.08) 0%, transparent 70%);
+  }
+}
