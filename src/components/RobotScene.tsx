@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { Suspense, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Stage, useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
@@ -92,7 +92,9 @@ export default function RobotScene() {
       <directionalLight position={[-10, 10, -5]} intensity={0.5} color="#ffffff" />
       
       {/* The rotating robot */}
-       <CustomRobot />
+      <Suspense fallback={null}>
+        <PlaceholderRobot />
+      </Suspense>
       
       {/* The stage/pedestal the robot sits on */}
       <mesh position={[0, -0.1, 0]}>
